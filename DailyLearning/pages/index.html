@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html</title>
+</head>
+<body>
+  <div class="Task">
+      <!-- File upload -->
+      <label for="file">Upload a file:</label>
+      <input type="file" id="file" name="file">
+      <!--Range Slider  -->
+      <label for="volume">Adjust volume:</label>
+     <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+     <!-- Color -->
+     <label for="favcolor">Choose a color:</label>
+     <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+     <!--Date Picker  -->
+     <label for="dob">Select your birthdate:</label>
+     <input type="date" id="dob" name="dob">
+  <!-- Date and time -->
+  <label for="appointment">Schedule an appointment:</label>
+  <input type="datetime-local" id="appointment" name="appointment">
+  <!-- Time picker -->
+  <label for="meeting">Choose a meeting time:</label>
+  <input type="time" id="meeting" name="meeting">
+  </div>
+
+  <div class="form">
+    <form>
+        <label for="username">Username (required):</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="email">Email (valid format required):</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="age">Age (18+):</label>
+        <input type="number" id="age" name="age" min="18" required>
+        
+        <label for="password">Password (Min 6 characters):</label>
+        <input type="password" id="password" name="password" minlength="6" required>
+        
+        <label for="website">Website (Must be a valid URL):</label>
+        <input type="url" id="website" name="website" required>
+        
+        <label for="phone">Phone (Format: 123-456-7890):</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        
+        <button type="submit">Submit</button>
+      </form>
+  </div>
+
+
+</body>
+</html>
