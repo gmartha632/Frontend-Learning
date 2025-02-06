@@ -1,53 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimedia</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Audio  -->
     <audio controls>
-        <source src="../assets/Nee-Singam-Dhan-MassTamilan.dev.mp3" type="audio/mpeg">
-       Song of A.R.Rahaman
+      <source
+        src="../assets/Nee-Singam-Dhan-MassTamilan.dev.mp3"
+        type="audio/mpeg"
+      />
+      Song of A.R.Rahaman
     </audio>
     <!-- Content editable attribute -->
-    <h1 contenteditable="true">
-        Hi I am Robo . Nice to meet you
-    </h1>
-    <h1 contenteditable="false">
-        You can't edit me .
-    </h1>
+    <h1 contenteditable="true">Hi I am Robo . Nice to meet you</h1>
+    <h1 contenteditable="false">You can't edit me .</h1>
 
     <!-- video -->
     <video width="600" controls>
-        
-        <source src="../assets/y2mate.com - Past Life  Never Forget  Nagesh  Server Sundaram Nagesh Motivational Speech  Vasanth Creation_360P.mp4" type="video/mp4">
-        Nagesh sir's Video
+      <source
+        src="../assets/y2mate.com - Past Life  Never Forget  Nagesh  Server Sundaram Nagesh Motivational Speech  Vasanth Creation_360P.mp4"
+        type="video/mp4"
+      />
+      Nagesh sir's Video
     </video>
     <!-- iframe Element -->
     <!-- <iframe width="600" height="350" src="https://www.youtube.com/embed/https://www.youtube.com/watch?v=NWHluLBZX9Q&t=17166s" allowfullscreen></iframe> -->
 
-<!-- Article Tag -->
+    <!-- Article Tag -->
     <article>
-        <h2>Latest Tech News</h2>
-        <p>HTML5 introduces many new features for developers.</p>
+      <h2>Latest Tech News</h2>
+      <p>HTML5 introduces many new features for developers.</p>
     </article>
     <!--Aside tag  -->
     <aside>
-        <h3>Related Articles</h3>
-        <ul>
-            <li><a href="#">HTML5 Basics</a></li>
-            <li><a href="#">CSS3 Guide</a></li>
-        </ul>
+      <h3>Related Articles</h3>
+      <ul>
+        <li><a href="#">HTML5 Basics</a></li>
+        <li><a href="#">CSS3 Guide</a></li>
+      </ul>
     </aside>
     <!-- Marks tag -->
     <p>HTML5 is <mark>very important</mark> for modern web development.</p>
-       <!--  -->
-       <figure>
-        <img src="" alt="A beautiful scenery" >
-        <figcaption>A breathtaking view of the mountains.</figcaption>
+    <!--  -->
+    <figure>
+      <img src="" alt="A beautiful scenery" />
+      <figcaption>A breathtaking view of the mountains.</figcaption>
     </figure>
-    
-    </body>
+
+    <!-- Aria Elements -->
+    <!-- Aria-label , Provides an Accessible Name-->
+    <button aria-label="Close">X</button>
+
+    <!-- Aria-hidden -->
+    <div aria-hidden="true">Hidden text</div>
+
+    <!-- role attribute -->
+    <div role="alert">Error! Invalid input.</div>
+
+    <!-- Aria live -->
+    <div aria-live="polite">New messages will appear here.</div>
+
+    <!-- Aria-labelledby , References an Element for Labeling-->
+    <label id="username-label">Username:</label>
+    <input type="text" aria-labelledby="username-label" />
+    <!--aria-describedby (Provides Additional Information)  -->
+    <input type="text" id="email" aria-describedby="email-help" />
+    <small id="email-help">Enter a valid email address.</small>
+
+    <!-- role (Defines the Purpose of an Element) -->
+    <nav role="navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+
+    <!-- aria-expanded (Indicates Collapsible Elements) -->
+    <button aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu" hidden>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+
+    <!-- aria-checked (Indicates Checkbox State) -->
+    <div role="checkbox" aria-checked="false" tabindex="0">
+      Enable notifications
+    </div>
+
+    <!-- aria-pressed (Indicates Button State) -->
+    <button aria-pressed="false">Mute</button>
+
+    <!--   Accessible Accordion-->
+
+    <button aria-expanded="false" aria-controls="content" id="toggle">
+      Show More
+    </button>
+    <div id="content" hidden>
+      <p>This is additional content.</p>
+    </div>
+
+    <script>
+      const button = document.getElementById("toggle");
+      const content = document.getElementById("content");
+
+      button.addEventListener("click", () => {
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", !isExpanded);
+        content.hidden = isExpanded;
+      });
+    </script>
+  </body>
 </html>
