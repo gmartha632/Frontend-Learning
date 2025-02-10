@@ -1,0 +1,48 @@
+/* button{
+    color: green;
+} */
+
+*{
+    padding: 0px;
+    border: 0px;
+    color: white;
+
+}
+
+#navbar{
+    height: 60px;
+    background-color: #0f110f;
+    
+
+}
+button{
+    background-color:#f08804
+}
+
+#logo{
+    color: #f08804;
+}
+
+a{
+    margin-right: 200px;
+    text-decoration: none;
+}
+
+#content{
+    height: 780px;
+}
+
+.content-area{
+    height: 100px;
+    width: 100px;
+    border : 2px solid black ;
+    display: inline-block;
+
+}
+
+
+footer{
+    background-color: black;
+    text-align: center;
+    
+}
