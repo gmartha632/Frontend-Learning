@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Css Level 5</title>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        background-color: aquamarine;
+        border: 2px solid black;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        /*  transition-property:all ;
+        transition-duration: 2s;
+        transition-timing-function:ease-in;
+        transition-delay: 1s;*/
+        text-align: center;
+        transition: all 1.2s ease-in 1s;
+      }
+
+      div:hover {
+        background-color: red;
+        /* transform: rotate(45deg); */
+        /*transform: scale(2);*/
+        transform: translateX(50px);
+      }
+
+      #box{
+        height: 200px;
+        width: 200px;
+        background-color: chocolate;
+        border: 2px solid black;
+    /*    animation-name: colorAnimate;
+        animation-duration: 0.25s;
+        animation-timing-function: ease-in;
+        animation-delay: 0s;
+        animation-iteration-count: infinite; */
+        animation: colorAnimate 2s  ease-in 0s infinite;
+      }
+
+      @keyframes  colorAnimate {
+       /* from {background-color: antiquewhite;}
+    to {background-color: green;} */
+    from{
+        left: 0px;
+        background-color: yellow;
+    } 
+    to{
+        left: 200px;
+        background-color: red;
+    }
+    }
+    </style>
+  </head>
+  <body>
+    <div>This is a box</div>
+
+    <div id="box">Animation movies</div>
+  </body>
+</html>

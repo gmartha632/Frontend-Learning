@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4 Css practice</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .navbar{
+background-color: pink;
+display: flex;
+justify-content: space-evenly;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style-type: none;
+            display: flex ;
+        }
+
+        #outer{
+            height: 400px;
+            width: 400px;
+            background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #inner{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        #media{
+            height: 200px;
+            width: 200px;
+            background-color:chocolate;
+        }
+       @media (max-width : 300px){
+        #media{
+            background-color:green;
+
+        }
+       }
+
+       @media (max-width : 400px) and (min-width:300px){
+        #media{
+            background-color:pink;
+
+        }
+       }
+       @media (max-width : 600px) and (min-width:400px){
+        #media{
+            background-color:red;
+
+        }
+       }
+       @media (min-width : 600px){
+        #media{
+            background-color:blue;
+
+        }
+       }
+    </style>
+</head>
+<body>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li> 
+        </ul>
+
+        <div id="outer">
+            <div id="inner"></div>
+        </div>
+
+        <div id="media"></div>
+</body>
+</html>

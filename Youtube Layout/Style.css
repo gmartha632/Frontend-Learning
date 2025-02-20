@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+}
+
+.search-bar {
+    width: 40%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    color: white;
+}
+
+.home { background: red; }
+.trending { background: orange; }
+.subscriptions { background: blue; }
+.music { background: green; }
+.gaming { background: purple; }
+.learning { background: lightgreen; }
+
+.sidebar a:hover {
+    opacity: 0.8;
+}
+
+/* Sidebar Hidden */
+.sidebar.hidden {
+    transform: translateX(-100%);
+    position: absolute;
+}
+
+/* Video Grid */
+.video-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+    height: 90vh;
+}
+
+.video {
+    height: 300px;
+    border-radius: 8px;
+}
+
+.video{
+    background-color: gray;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 60px;
+        padding: 10px;
+    }
+
+    .sidebar a {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .search-bar {
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .search-bar {
+        width: 80%;
+    }
+}

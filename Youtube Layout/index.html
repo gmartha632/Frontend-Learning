@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <button class="hamburger" onclick="toggleSidebar()">☰</button>
+        <div class="logo">YouTube</div>
+        <input type="text" placeholder="Search" class="search-bar">
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="#" class="home">Home</a>
+            <a href="#" class="trending">Trending</a>
+            <a href="#" class="subscriptions">Subscriptions</a>
+            <a href="#" class="music">Music</a>
+            <a href="#" class="gaming">Gaming</a>
+            <a href="#" class="learning">Learning</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="video-container">
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+         <div class="video"></div>
+        </main>
+    </div>
+
+    <script >
+        function toggleSidebar() {
+            document.querySelector(".sidebar").classList.toggle("hidden");
+        }
+        
+    </script>
+</body>
+</html>
