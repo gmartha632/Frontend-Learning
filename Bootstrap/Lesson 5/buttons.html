@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <button class="btn btn-primary" type="button">Primary</button>
+          <button class="btn btn-secondary" type="button">secondary</button>
+          <button class="btn btn-success" type="button">success</button>
+          <button class="btn btn-danger" type="button">danger</button>
+          <button class="btn btn-warning" type="button">warning</button>
+          <button class="btn btn-info" type="button">info</button>
+          <button class="btn btn-light" type="button">light</button>
+          <button class="btn btn-dark" type="button">dark</button>
+          <button class="btn btn-link" type="button">link</button>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <button class="btn btn-outline-primary px-3" type="button">
+            Primary
+          </button>
+          <button class="btn btn-outline-secondary px-3" type="button">
+            secondary
+          </button>
+          <button class="btn btn-outline-success px-3" type="button">
+            success
+          </button>
+          <button class="btn btn-outline-danger px-3" type="button">
+            danger
+          </button>
+          <button class="btn btn-outline-warning px-3" type="button">
+            warning
+          </button>
+          <button class="btn btn-outline-info px-3" type="button">info</button>
+          <button class="btn btn-outline-light px-3" type="button">
+            light
+          </button>
+          <button class="btn btn-outline-dark px-3" type="button">dark</button>
+          <button class="btn btn-outline-link px-3" type="button">link</button>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <button class="btn btn-primary px-3" type="button">Primary</button>
+          <button class="btn btn-secondary btn-lg px-3" type="button">
+            secondary
+          </button>
+          <button class="btn btn-success btn-sm px-3" type="button">
+            success
+          </button>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <button
+            class="btn btn-primary"
+            type="button"
+            style="
+              --bs-btn-padding-y: 24px;
+              -bs-btn-padding-x: 48px;
+              -bs-btn-font-size: 14px;
+            "
+          >
+            Custom button
+          </button>
+
+          <a
+            href="#"
+            class="btn btn-primary disabled"
+            role="button"
+            aria-disabled="true"
+            >Disabled link</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <button class="btn btn-primary" type="submit">Button</button>
+          <input type="submit" class="btn btn-primary" value="Submit" />
+          <input type="reset" class="btn btn-primary" value="Reset" />
+          <input type="button" class="btn btn-primary" value="Button" />
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary" type="button">Button</button>
+            <button class="btn btn-primary" type="button">Button</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <button class="btn btn-primary" type="button" data-bs-toggle="button">
+            Toggle Button
+          </button>
+          <button
+            class="btn btn-primary active"
+            type="button"
+            data-bs-toggle="button"
+            aria-pressed="true"
+          >
+            Toggle Button
+          </button>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="button"
+            disabled
+          >
+            Toggle Button
+          </button>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <a
+            href="#"
+            class="btn btn-success"
+            data-bs-toggle="button"
+            role="button"
+            >Toggle Link</a
+          >
+          <a
+            href="#"
+            class="btn btn-success active"
+            data-bs-toggle="button"
+            role="button"
+            aria-pressed="true"
+            >Toggle Link</a
+          >
+          <a
+            href="#"
+            class="btn btn-success disabled"
+            data-bs-toggle="button"
+            role="button"
+            aria-disabled="true"
+            >Toggle Link</a
+          >
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <button
+            class="btn"
+            type="button"
+            style="
+              --bs-btn-color: white;
+              --bs-btn-bg: crimson;
+              --bs-btn-border-color: orangered;
+              --bs-btn-hover-color: white;
+              --bs-btn-hover-bg: black;
+              --bs-btn-hover-border-color: crimson;
+            "
+          >
+            Different Color
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="contianer mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md8 mt-3">
+          <div class="btn-group" role="group" aria-label="Basic Example">
+            <button type="button" class="btn btn-primary">Left</button>
+            <button type="button" class="btn btn-primary">Center</button>
+            <button type="button" class="btn btn-primary">Right</button>
+          </div>
+        </div>
+
+        <div class="col-md8 mt-3">
+          <div class="btn-group" role="group" aria-label="Basic Example">
+            <button type="button" class="btn btn-primary active">Left</button>
+            <button type="button" class="btn btn-primary">Center</button>
+            <button type="button" class="btn btn-primary">Right</button>
+          </div>
+        </div>
+
+        <div class="col-md8 mt-3">
+          <div class="btn-group" role="group" aria-label="Basic Example">
+            <button type="button" class="btn btn-warning">Left</button>
+            <button type="button" class="btn btn-danger">Center</button>
+            <button type="button" class="btn btn-success">Right</button>
+          </div>
+        </div>
+
+        <div class="col-md8 mt-3">
+          <div class="btn-group" role="group" aria-label="Basic Example">
+            <button type="button" class="btn btn-outline-primary">Left</button>
+            <button type="button" class="btn btn-outline-primary">
+              Center
+            </button>
+            <button type="button" class="btn btn-outline-primary">Right</button>
+          </div>
+        </div>
+
+        <div class="col-md8 mt-3">
+          <div class="btn-group" role="group" aria-label="Basic Example">
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="check1"
+              autocomplete="off"
+            />
+            <label for="check1" class="btn btn-outline-primary">Check1</label>
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="check2"
+              autocomplete="off"
+            />
+            <label for="check2" class="btn btn-outline-primary">Check2</label>
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="check3"
+              autocomplete="off"
+            />
+            <label for="check3" class="btn btn-outline-primary">Check3</label>
+          </div>
+        </div>
+
+        <div class="col-md8 mt-3">
+          <div class="btn-group" role="group" aria-label="Basic Example">
+            <input
+              type="radio"
+              class="btn-check"
+              id="male"
+              name="gender"
+              autocomplete="off"
+            />
+            <label for="male" class="btn btn-outline-primary">Male</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              id="female"
+              name="gender"
+              autocomplete="off"
+            />
+            <label for="female" class="btn btn-outline-primary">Female</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              id="other"
+              name="gender"
+              autocomplete="off"
+            />
+            <label for="other" class="btn btn-outline-primary">Other</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contianer mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div
+            class="btn-toolbar"
+            role="toolbar"
+            aria-label="Toolbar with button groups"
+          >
+            <div class="btn-group me-2" role="group" aria-label="First Group">
+              <button class="btn btn-primary">1</button>
+              <button class="btn btn-primary">2</button>
+              <button class="btn btn-primary">3</button>
+              <button class="btn btn-primary">4</button>
+            </div>
+            <div class="btn-group me-2" role="group" aria-label="Second Group">
+              <button class="btn btn-secondary">1</button>
+              <button class="btn btn-secondary">2</button>
+              <button class="btn btn-secondary">3</button>
+              <button class="btn btn-secondary">4</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <div
+            class="btn-toolbar justify-content-between"
+            role="toolbar"
+            aria-label="Toolbar with button groups"
+          >
+            <div class="btn-group me-2" role="group" aria-label="First Group">
+              <button class="btn btn-primary">1</button>
+              <button class="btn btn-primary">2</button>
+              <button class="btn btn-primary">3</button>
+              <button class="btn btn-primary">4</button>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input
+                type="text"
+                class="form-control form-control-sm me-2"
+                placeholder="Username"
+              />
+            </div>
+            <div class="btn-group me-2" role="group" aria-label="Second Group">
+              <button class="btn btn-secondary">1</button>
+              <button class="btn btn-secondary">2</button>
+              <button class="btn btn-secondary">3</button>
+              <button class="btn btn-secondary">4</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contianer mt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-8 mt-3">
+          <div class="btn-group" role="group" aria-label="Size Example">
+            <button type="button" class="btn btn-primary">Left</button>
+            <button type="button" class="btn btn-primary">Center</button>
+            <button type="button" class="btn btn-primary">End</button>
+          </div>
+        </div>
+
+        <div class="col-md-8 mt-3">
+          <div
+            class="btn-group btn-group-lg"
+            role="group"
+            aria-label="Size Example"
+          >
+            <button type="button" class="btn btn-primary">Left</button>
+            <button type="button" class="btn btn-primary">Center</button>
+            <button type="button" class="btn btn-primary">End</button>
+          </div>
+        </div>
+
+
+        <div class="col-md-8 mt-3">
+            <div
+              class="btn-group-vertical btn-group-lg"
+              role="group"
+              aria-label="Size Example"
+            >
+              <button type="button" class="btn btn-primary">Left</button>
+              <button type="button" class="btn btn-primary">Center</button>
+              <button type="button" class="btn btn-primary">End</button>
+            </div>
+          
+      
+      
+        </div>
+
+      <div class="col-md-8 mt-3">
+        <div
+          class="btn-group btn-group-sm"
+          role="group"
+          aria-label="Size Example"
+        >
+          <button type="button" class="btn btn-primary">Left</button>
+          <button type="button" class="btn btn-primary">Center</button>
+          <button type="button" class="btn btn-primary">End</button>
+        </div>
+      </div>
+
+      <div class="col-md-8 mt-3">
+        <div
+          class="btn-group btn-group-sm"
+          role="group"
+          aria-label="Size Example"
+        >
+          <button type="button" class="btn btn-primary">Left</button>
+          <button type="button" class="btn btn-primary">Center</button>
+          <div class="btn-group btn-group-sm" role="group">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              id="btn-group-1"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="btn-group-1">
+              <li><a href="#" class="dropdown-item">Dropdown Link</a></li>
+              <li><a href="#" class="dropdown-item">Dropdown Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
