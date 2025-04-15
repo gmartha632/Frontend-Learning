@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI-Patterns.com</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+          }
+        .navbar-dark .navbar-nav .nav-link:hover,
+        .navbar-dark .navbar-nav .nav-link.active {
+          color: white !important;
+          text-decoration: none; 
+        }
+
+        .hero{
+            margin-top:50px;
+          }
+        
+          h1, h2 {
+            font-weight: 800;
+          }
+          .card img {
+            height: 220px;
+            object-fit: contain;
+            background-color: #f8f8f8;
+          }
+          .btn-buy {
+            background-color: #f25022;
+            color: white;
+            border: none;
+          }
+          .btn-buy:hover {
+            background-color: #d84315;
+          }
+
+
+          .section-title {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+          }
+          .pattern-card {
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+          }
+          .pattern-card h6 {
+            font-weight: 700;
+          }
+          .pattern-card a {
+            text-decoration: none;
+          }
+          .btn-orange {
+            background-color: #f25022;
+            color: white;
+            border: none;
+          }
+          .btn-orange:hover {
+            background-color: #d84315;
+          }
+
+          
+          .feature-card {
+            background-color: #f4f9f8;
+            border-radius: 12px;
+            padding: 2rem 1rem;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.2s ease;
+          }
+      
+          .feature-card:hover {
+            transform: translateY(-5px);
+          }
+      
+          .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #000;
+          }
+      
+          .feature-title {
+            color: #e24d25;
+            font-weight: 700;
+            font-size: 1.25rem;
+          }
+      
+          .feature-text {
+            color: #6c757d;
+            font-size: 1rem;
+          }
+      
+          .feature-img {
+            max-height: 60px;
+            margin-bottom: 1rem;
+          }
+
+
+          .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          }
+      
+          .section-header {
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            color: white;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+      
+          .ui-header { background: linear-gradient(to right, #d64848, #f4a261);  font-size: 25px; font-weight: 300;}
+          .persuasive-header { background: #5f868e; font-size: 25px;font-weight: 300; }
+          .validation-header { background: linear-gradient(to right, #4db784, #b3e1b1); font-size: 25px;font-weight: 300; }
+          .business-header { background: linear-gradient(to right, #8357a3, #d1a5d1); font-size: 25px;font-weight: 300; }
+      
+          .pattern-title {
+            font-weight: 400;
+            color: rgb(234, 84, 20);
+            font-size: 20px;
+          }
+      
+          .pattern-description {
+            font-size: 0.95rem;
+            color: #444;
+          }
+      
+          .footer-note {
+            font-size: 0.85rem;
+            color: #888;
+            text-align: center;
+            margin-top: 1rem;
+          }
+      
+          .explore-btn {
+            background-color: #f25c3c;
+            color: white;
+            font-weight: bold;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 5px;
+            margin-top: 2rem;
+          }
+      
+          .explore-btn:hover {
+            background-color: #d64830;
+          }
+      
+          a {
+            text-decoration: none;
+          }
+      
+          a:hover {
+            text-decoration: underline;
+          }
+
+          .section-box {
+            background-color: #f3f7f7;
+            padding: 2rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+      
+          .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin: -2rem -2rem 1.5rem -2rem;
+          }
+      
+          .gradient-green {
+            background: linear-gradient(to right, #3ddad7, #59c99e);
+          }
+      
+          .gradient-blue {
+            background: linear-gradient(to right, #427dcf, #72c1f2);
+            font-weight: 300;
+          }
+      
+          .section-button {
+            background-color: #f4511e;
+            border: none;
+            color: white;
+          }
+      
+          .blog-date {
+            font-size: 0.8rem;
+            color: gray;
+          }
+      
+          .blog-title {
+            color: #f4511e;
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+      
+          .blog-entry {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+          }
+      
+          .blog-button {
+            background-color: #eceff1;
+            border: none;
+            color: #333;
+          }
+          .screenshot-sec{
+              height: 800px;
+          }
+      
+          .screenshot-thumbs img {
+            width: 100px;
+            height: auto;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+          }
+      
+          .screenshot-thumbs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+          }
+      
+          .section-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+          }
+
+          .fixed-download-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+            max-width: 300px;
+          }
+          .products-card{
+            font-size:20px ;
+          }
+      </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom small blur-filter">
+        <div class="container">
+          <a href="index.html" class="navbar-brand">
+            <img src="https://ui-patterns.com/assets/ui-patterns-logo-133414af8d0ca03e780b8d021511b938ee6b8f5b1de5b5af6f47e2a001417fa1.svg" alt="Logo" height="40">
+          </a>
+      
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-content"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbar-content">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-secondary ">Design Patterns</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-secondary ">Screenshots</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-secondary ">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-secondary ">Talks</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-secondary ">Shop</a>
+              </li>
+            </ul>
+      
+            <form class="d-flex" role="search">
+              <div class="input-group">
+                <input type="search" class="form-control form-control-sm" placeholder="Search for">
+                <button class="btn btn-sm btn-light" type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+
+<!-- Hero Section -->
+<div class="container py-5  hero">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-start">
+        <h1 class="mb-3 fw-bold text-dark">User Interface Design patterns</h1>
+        <p class="lead">
+          User Interface Design patterns are recurring solutions that solve common design problems. 
+          Design patterns are standard reference points for the experienced user interface designer.
+        </p>
+  
+        <h2 class="mt-5 mb-3 fw-bold">Product Insights at your fingertips.</h2>
+        <p class="lead">
+          Our confidence-boosting product tools for business growth are practical guides and strategies 
+          that will immediately amplify the expertise of you and your team.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product Cards -->
+  <div class="container pb-5">
+    <div class="row text-center g-4">
+  
+      <div class="col-md-3">
+        <div class="card h-100 border-0">
+          <img src="https://ui-patterns.com/assets/products/persuasive-patterns-card-deck-f4c72dc7fefff1b02fee63df9a80bef0bf7a8c3ab61e03610e29bc6852b16e83.png" alt="Persuasive Patterns" class="card-img-top">
+          <div class="card-body">
+            <h6 class="fw-bold products-card">Persuasive Patterns Card Deck</h6>
+            <p class="text-muted">From $49</p>
+            <button class="btn btn-buy btn-danger">Buy now</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3">
+        <div class="card h-100 border-0">
+          <img src="https://ui-patterns.com/assets/products/discovery-patterns-card-deck-4e6a38d33f053d30993743924bc1cc30504d71639f19953982de98e2b87032d8.png" alt="Discovery Patterns" class="card-img-top">
+          <div class="card-body">
+            <h6 class="fw-bold products-card">Discovery Patterns Card Deck</h6>
+            <p class="text-muted">From $49</p>
+            <button class="btn btn-buy btn-danger">Buy now</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3">
+        <div class="card h-100 border-0">
+          <img src="https://ui-patterns.com/assets/products/validation-patterns-card-deck-3e8758ab795965e35a8f8e32bfb927061a0caecf3cc072146cf084e7775249ec.png" alt="Validation Patterns" class="card-img-top">
+          <div class="card-body">
+            <h6 class="fw-bold products-card">Validation Patterns Card Deck</h6>
+            <p class="text-muted">From $49</p>
+            <button class="btn btn-buy btn-danger">Buy now</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-3">
+        <div class="card h-100 border-0">
+          <img src="https://ui-patterns.com/assets/products/ui-patterns-card-deck-4d6f4fcdee0072248c776e2930439a58494f6a1adefb99ba13816a8bead3fa4e.png" alt="UI Patterns" class="card-img-top">
+          <div class="card-body">
+            <h6 class="fw-bold products-card">UI Patterns Card Deck</h6>
+            <p class="text-muted">From $49</p>
+            <button class="btn btn-buy  btn-danger">Buy now</button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-4 text-center">
+      <!-- Get our cards -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card">
+          <img src="https://ui-patterns.com/uploads/image/file/4293/3-cards.jpg" alt="Cards" class="feature-img"  height="40px"/>
+          <div class="feature-title">Get our cards</div>
+          <div class="feature-text">The perfect offline tool to make change happen in your organization.</div>
+        </div>
+      </div>
+  
+      <!-- Understand User Behavior -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/>
+              </svg>
+          <div class="feature-title">Understand User Behavior</div>
+          <div class="feature-text">An easy to follow email-course on designing effective user interfaces.</div>
+        </div>
+      </div>
+  
+      <!-- UI Talks -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+              </svg>
+          <div class="feature-title">UI Talks</div>
+          <div class="feature-text">Find conference talks on anything related to User Experience design.</div>
+        </div>
+      </div>
+  
+      <!-- UI bi-weekly -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-card">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+          <div class="feature-title">UI bi-weekly</div>
+          <div class="feature-text">A curated list of the best UX design links every second week.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Design patterns -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- User Interface Design Patterns -->
+      <div class="col-md-6">
+        <div class="section">
+          <div class="section-header ui-header">
+            <span>User Interface Design Patterns</span>
+          </div>
+          <div class="row bg-light">
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Getting input</div>
+              <div class="pattern-description">Getting the user to input data is a task that should be tailored to the context of use.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Navigation</div>
+              <div class="pattern-description">The user needs to locate specific features and content and needs navigation to accomplish this.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Dealing with data</div>
+              <div class="pattern-description">Data can be searched, formatted, overviewed, and browsed in a variety of ways.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Social</div>
+              <div class="pattern-description">Allow the user to associate, communicate, and interact with other people online.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Miscellaneous</div>
+              <div class="pattern-description">Patterns that haven't found their main category yet.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Onboarding</div>
+              <div class="pattern-description">The user needs to acquire the necessary knowledge, skills, and behaviors to become effective.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Persuasive Design Patterns -->
+      <div class="col-md-6">
+        <div class="section">
+          <div class="section-header persuasive-header">
+            <span>Persuasive Design Patterns</span>
+          </div>
+          <div class="row bg-light">
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Cognition</div>
+              <div class="pattern-description">Patterns of psychological tendencies that cause the human brain to draw incorrect conclusions.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Game mechanics</div>
+              <div class="pattern-description">Games engage, involve, and influence us through its playful nature.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Perception and memory</div>
+              <div class="pattern-description">Patterns in how we visually perceive, interpret, and remember meanings as we interact with systems.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Feedback</div>
+              <div class="pattern-description">As the users interact with your system, feedback motivates them to take the next step.</div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Social</div>
+              <div class="pattern-description">Allow the user to associate, communicate, and interact with other people online.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Validation Patterns -->
+      <div class="col-md-6">
+        <div class="section">
+          <div class="section-header validation-header">
+            <span>Validation Patterns</span>
+            <span>By Learning Loop</span>
+          </div>
+          <div class="row bg-light">
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Problem validation</div>
+              <div class="pattern-description">Problem-solution fit: Is your problem worth solving? <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Market validation</div>
+              <div class="pattern-description">Problem-market fit: Don’t build something that nobody wants <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Product validation</div>
+              <div class="pattern-description">Product-market fit: Does your product solve the problem? <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Viability</div>
+              <div class="pattern-description">Willingness to pay: Are people willing to reach into their wallets? <a href="#">↗</a></div>
+            </div>
+          </div>
+          <div class="footer-note">The Validation Patterns pattern collection is hosted by Learning Loop.</div>
+        </div>
+      </div>
+  
+      <!-- Business Model Patterns -->
+      <div class="col-md-6">
+        <div class="section">
+          <div class="section-header business-header">
+            <span>Business Model Patterns</span>
+            <span>By Learning Loop</span>
+          </div>
+          <div class="row bg-light">
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Customer Segment</div>
+              <div class="pattern-description">Meeting the unique needs of each and every customer <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Pricing Model</div>
+              <div class="pattern-description">Innovative pricing strategies for sustainable growth <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Revenue Streams</div>
+              <div class="pattern-description">Explore different revenue streams to maximize potential <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Value Network</div>
+              <div class="pattern-description">Sharing resources and risks for mutual benefit in the network <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Value Proposition</div>
+              <div class="pattern-description">Value proposition strategies for long-term success <a href="#">↗</a></div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="pattern-title">Value Proposition Development</div>
+              <div class="pattern-description">Unlocking growth through value proposition design <a href="#">↗</a></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center border-top border-bottom ">
+        
+      <button class="explore-btn mb-4">Explore all design patterns</button>
+      
+     
+    </div>
+    
+  </div>
+
+  <!-- Screenshots and blog -->
+
+  <div class="container my-5 ">
+    <div class="row g-4 align-items-stretch">
+      <!-- Screenshots Section -->
+      <div class="col-md-7 screenshot-sec">
+        <div class="section-box h-100 d-flex flex-column p-4 bg-light shadow-sm rounded">
+          <!-- Section Title with Gradient -->
+          <div class="section-title gradient-green text-white py-2 px-3 rounded-top fs-4 fw-light mb-3">
+            Screenshots
+          </div>
+      
+          <!-- Intro Text -->
+          <p>
+            Find inspiration and influence from years of carefully curated collections of great design. Find out what works for you and what doesn’t work. Compare and inspect a multitude of implementation examples of the problem you’re trying to solve.
+          </p>
+          <p>
+            Gaze over great design, pick them apart and understand the techniques behind them.
+          </p>
+      
+          <!-- Section Heading -->
+          <h4 class="section-heading fw-bold mb-4">Popular screenshot collections</h4>
+      
+          <!-- Screenshot Thumbnails Grid -->
+          <div class="row g-3 mb-4">
+            <div class="col-6 col-sm-4">
+              <div class="text-center">
+                <span class="badge bg-secondary mb-1">Account Registration</span>
+                <img src="https://ui-patterns.com/uploads/image/file/836/preview_old_199.jpg" alt="Account Registration" class="img-fluid border rounded screenshots" height="40px">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4">
+              <div class="text-center">
+                <span class="badge bg-secondary mb-1">Pricing Tables</span>
+                <img src="https://ui-patterns.com/uploads/image/file/380/best_old_25.jpg" alt="Pricing Tables" class="img-fluid border rounded">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4">
+              <div class="text-center">
+                <span class="badge bg-secondary mb-1">Error pages</span>
+                <img src="https://ui-patterns.com/uploads/image/file/2117/preview_224.jpg" alt="Error Pages" class="img-fluid border rounded">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4">
+              <div class="text-center">
+                <span class="badge bg-secondary mb-1">Lists</span>
+                <img src="https://ui-patterns.com/uploads/image/file/271/preview_873.jpg" alt="Lists" class="img-fluid border rounded" height="50px" width="100px">
+              </div>
+            </div>
+            <div class="col-6 col-sm-4">
+              <div class="text-center">
+                <span class="badge bg-secondary mb-1">Content Teasers</span>
+                <img src="https://ui-patterns.com/uploads/image/file/1227/preview_539.jpg" alt="Content Teasers" class="img-fluid border rounded " height="100px" width="100px">
+              </div>
+            </div>
+          </div>
+      
+          <!-- CTA Button -->
+          <div class="mt-auto text-center">
+            <button class="btn section-button">Browse screenshot library</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Section -->
+      <div class="col-md-5">
+        <div class="section-box h-100">
+          <div class="section-title gradient-blue ">Blog</div>
+
+          <div class="blog-entry">
+            <div class="blog-date">Feb 08, 2025</div>
+            <div class="blog-title">Why flipping your ideation brainstorms will lead to more creativity</div>
+            <p>The Persuasive Patterns card deck is a powerful tool for shaping user experiences...</p>
+            <button class="btn blog-button">Continue reading</button>
+          </div>
+
+          <div class="blog-entry">
+            <div class="blog-date">Dec 06, 2024</div>
+            <div class="blog-title">Design Patterns are the building blocks of good UI</div>
+            <p>Have you ever marveled at the effortless way LEGO bricks click together?...</p>
+            <button class="btn blog-button">Continue reading</button>
+          </div>
+
+          <div class="blog-entry">
+            <div class="blog-date">Dec 05, 2024</div>
+            <div class="blog-title">Why sticking to known UI patterns improves UX</div>
+            <p>Ever feel like you’ve landed on a website in a foreign language...?</p>
+            <button class="btn blog-button">Continue reading</button>
+          </div>
+
+          <div class="mt-auto">
+            <button class="btn section-button">Read more design perspectives</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--Footer -->
+<footer class="bg-light py-5 mt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Column 1: Learn More -->
+        <div class="col-md-3">
+          <h5 class="fw-bold">Learn more</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Design Patterns</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Screenshots</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Talks</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Shop</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Send an email</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">About UI-Patterns.com</a></li>
+          </ul>
+        </div>
+  
+        <!-- Column 2: Shop -->
+        <div class="col-md-3">
+          <h5 class="fw-bold">Shop</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark text-decoration-none">Brainstorming tool web design</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Persuasive Patterns</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Validation Patterns</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">UX card deck</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Posters about UI and webdesign</a></li>
+          </ul>
+        </div>
+  
+        <!-- Column 3: Also by us -->
+        <div class="col-md-3">
+          <h5 class="fw-bold">Also by us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark text-decoration-none">UI Shop</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">UI Talks</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Product & UX Mentoring</a></li>
+          </ul>
+        </div>
+  
+        <!-- Column 4: Newsletter -->
+        <div class="col-md-3">
+          <h5 class="fw-bold">Subscribe to our newsletter</h5>
+          <p class="text-muted">Sign up to receive tips and tricks on how to create online designs that make people take action.</p>
+          <form class="d-flex">
+            <input type="email" class="form-control me-2" placeholder="Your email address">
+            <button type="submit" class="btn btn-danger">Subscribe</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- Bottom line -->
+      <div class="text-start mt-4 pt-3 ">
+        <small class="text-muted">
+          © 2007–2025 Learning Loop ApS. All rights reserved.
+          <a href="#" class="text-danger text-decoration-none">Privacy Policy.</a>
+        </small>
+      </div>
+    </div>
+  </footer>
+
+ 
+<!-- Fixed Card -->
+<div class="fixed-download-card bg-success text-white p-2 rounded shadow-lg">
+    <div class="text-center">
+      <div class=" fw-light">DOWNLOAD</div>
+      <div class="small mb-2">our top</div>
+      <div class="fs-3 fw-bold">Validation Patterns</div>
+      <div class="bg-white bg-opacity-10 rounded shadow-sm">
+        De-risk product decisions!
+      </div>
+    </div>
+  </div>
+  
+
+
+      
+             
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
